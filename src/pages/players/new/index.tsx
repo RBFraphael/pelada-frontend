@@ -17,24 +17,13 @@ export default function NewPlayer()
     const onSubmit = (data: any) => {
         setLoading(true);
 
-        Api.post(`/users`, data.user).then((res: AxiosResponse<IUser>) => {
-            data.user_id = res.data.id;
-            Api.post(`/players`, data).then((res: AxiosResponse<IPlayer>) => {
-                Alert({
-                    title: "Sucesso",
-                    text: "Jogador cadastrado com sucesso.",
-                    icon: "success"
-                }).then(() => {
-                    router.push("/players");
-                });
-            }).catch((err: AxiosError<any>) => {
-                Alert({
-                    title: "Erro",
-                    text: err.response?.data.message ?? "Ocorreu um erro ao cadastrar o jogador.",
-                    icon: "error"
-                });
-            }).finally(() => {
-                setLoading(false);
+        Api.post(`/players`, data).then((res: AxiosResponse<IPlayer>) => {
+            Alert({
+                title: "Sucesso",
+                text: "Jogador cadastrado com sucesso.",
+                icon: "success"
+            }).then(() => {
+                router.push("/players");
             });
         }).catch((err: AxiosError<any>) => {
             Alert({

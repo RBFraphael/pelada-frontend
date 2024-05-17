@@ -16,12 +16,6 @@ export default function PlayerForm({ player, onSubmit, onCancel, loading }: { pl
             <div className="row">
                 <div className="col-12 col-lg-6">
                     <div className="form-floating mb-3">
-                        <input {...register("user.name", { required: true })} type="text" className="form-control" placeholder="Nome de usuário*" />
-                        <label htmlFor="user.name" className="form-label">Nome de usuário*</label>
-                    </div>
-                </div>
-                <div className="col-12 col-lg-6">
-                    <div className="form-floating mb-3">
                         <input {...register("user.email", { required: true })} type="email" className="form-control" placeholder="E-mail*" />
                         <label htmlFor="email" className="form-label">E-mail*</label>
                     </div>
