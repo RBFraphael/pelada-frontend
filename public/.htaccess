@@ -1,15 +1,32 @@
-# Disable directory indexes and MultiViews
 Options -Indexes -MultiViews
-# Prevent mod_dir appending a slash to directory requests
 DirectorySlash Off
+
+# Ativa o motor de reescrita
 RewriteEngine On
-# Prevent any further processing if the URL already ends with a file extension
+
+# Não processar regras de reescrita para arquivos existentes (URLs terminadas com extensão)
 RewriteRule \.\w{2.4}$ - [L]
-# Redirect any requests to remove a trailing slash
+
+# Redireciona todas as URLs para uma versão sem barra no final
 RewriteRule (.*)/$ /$1 [R=301,L]
-# Rewrite /foo to /foo.html if it exists
+
+# Redireciona todos os diretórios (/foo) para o arquivo html correspondente (/foo.html) se existir
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule (.*) $1.html [L]
-# Otherwise, rewrite /foo to /foo/index.html if it exists
+
+# Redireciona todos os diretórios (/foo) para o arquivo index.html correspondente (/foo/index.html) se existir
 RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule (.*) $1/index.html [L]
+
+# Redireciona todas as requisições dinâmicas
+RewriteRule ^users/([0-9]+)$ /users/[user_id].html [L]
+RewriteRule ^players/([0-9]+)$ /players/[player_id].html [L]
+RewriteRule ^games/([0-9]+)$ /games/[game_id].html [L]
+RewriteRule ^games/([0-9]+)/teams/([0-9]+)$ /games/[game_id]/teams/[team_id].html [L]
+RewriteRule ^i/([0-9]+)/confirm$ /i/[invite_id]/confirm.html [L]
+RewriteRule ^i/([0-9]+)/reject$ /i/[invite_id]/reject.html [L]
+
+# Redireciona todas as outras requisições para index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]
