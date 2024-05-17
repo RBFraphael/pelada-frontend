@@ -21,10 +21,14 @@ export default function RouteGuard({ children }: { children: React.ReactNode })
     useEffect(() => {
         let isPublic: boolean = publicRoutes.filter((route: RegExp) => route.test(router.asPath)).length > 0;
         let isHome: boolean = router.asPath == "/";
+        let isInviteConfirm = router.asPath.includes("/i/");
         let savedToken: string|null = localStorage.getItem("access_token");
 
         if(isHome){
             router.push( savedToken ? "/dashboard" : "/login" );
+        } else if(isInviteConfirm){
+            setAdminPanel(false);
+            setRender(true);
         } else {
             if(savedToken){
                 setAdminPanel(true);
