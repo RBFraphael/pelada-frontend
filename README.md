@@ -1,40 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Pelada Logo](https://api.pelada.rbfstudio.net/logo.png)
 
-## Getting Started
+# Interface Web do projeto Pelada.com
 
-First, run the development server:
+## Sobre o projeto
+O Pelada.com consiste em um sistema de pequeno porte para organização de jogos de futebol entre amigos, normalmente em campos Society, popularmente conhecidos como "peladas".
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Inicializando o projeto
+1. Faça o clone do projeto `git clone https://github.com/rbfraphael/pelada-frontend.git`
+2. Instale as dependências do projeto `npm install`
+3. Altere o arquivo `.env`, definindo a URL da API a ser utilizada na propriedade `API_URL`
+    - Para mais informações sobre a API, veja o [Repositório da API](https://github.com/rbfraphael/pelada-api)
+4. Execute o projeto `npm run dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Executando o projeto
+Para visualizar o projeto, basta acessar a URL exibida no terminal ao executar o comando `npm run dev`. Normalmente, essa URL corresponde à https://localhost:3000, mas pode variar.
