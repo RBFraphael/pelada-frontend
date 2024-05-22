@@ -34,7 +34,11 @@ export default function Teams()
         },
         {
             name: "Jogadores",
-            selector: (row: ITeam) => row.players?.length ?? 0,
+            selector: (row: ITeam) => row.players_count,
+        },
+        {
+            name: "Média de nível",
+            selector: (row: ITeam) => row.average_level,
         },
         {
             name: "Data do jogo",
