@@ -29,4 +29,22 @@
     .user-card {
         background: linear-gradient(135deg, #2980b9, #8e44ad);
     }
+
+    @include media-breakpoint-down(lg){
+        aside.sidebar {
+            display: none;
+        }
+
+        main.content-wrapper {
+            padding-bottom: 5rem;
+        }
+    }
+}
+
+footer.panel-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
 }

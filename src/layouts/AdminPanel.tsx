@@ -64,6 +64,24 @@ export default function AdminPanel({ children }: { children: React.ReactNode }) 
                     { children }
                 </main>
             </div>
+
+            <footer className="panel-footer border-top p-2 d-flex d-lg-none flex-row justify-content-between bg-light shadow">
+                <Link href="/dashboard" className="btn btn-light border-0">
+                    <FontAwesomeIcon icon={faGauge} fixedWidth /> <span className="d-none d-md-inline">Dashboard</span>
+                </Link>
+                <Link href="/users" className="btn btn-light border-0">
+                    <FontAwesomeIcon icon={faUsers} fixedWidth /> <span className="d-none d-md-inline">Usuários</span>
+                </Link>
+                <Link href="/players" className="btn btn-light border-0">
+                    <FontAwesomeIcon icon={faPersonRunning} fixedWidth /> <span className="d-none d-md-inline">Jogadores</span>
+                </Link>
+                <Link href="/games" className="btn btn-light">
+                    <FontAwesomeIcon icon={faFutbol} fixedWidth /> <span className="d-none d-md-inline">Jogos</span>
+                </Link>
+                <Link href="/logout" className="btn btn-dark border-0">
+                    <FontAwesomeIcon icon={faSignOut} fixedWidth /> <span className="d-none d-md-inline">Sair</span>
+                </Link>
+            </footer>
         </>
     );
 }
